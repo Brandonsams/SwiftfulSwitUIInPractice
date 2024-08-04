@@ -11,6 +11,8 @@
 		93D8F4672C60016F00868DA3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D8F4662C60016F00868DA3 /* ContentView.swift */; };
 		93D8F4692C60017000868DA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93D8F4682C60017000868DA3 /* Assets.xcassets */; };
 		93D8F46D2C60017000868DA3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93D8F46C2C60017000868DA3 /* Preview Assets.xcassets */; };
+		93D8F4752C6002D900868DA3 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 93D8F4742C6002D900868DA3 /* SDWebImageSwiftUI */; };
+		93D8F47A2C60033C00868DA3 /* ImageLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D8F4792C60033C00868DA3 /* ImageLoaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,7 @@
 		93D8F4682C60017000868DA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93D8F46A2C60017000868DA3 /* SwiftfulSwitUIInPractice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftfulSwitUIInPractice.entitlements; sourceTree = "<group>"; };
 		93D8F46C2C60017000868DA3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		93D8F4792C60033C00868DA3 /* ImageLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93D8F4752C6002D900868DA3 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +58,7 @@
 			children = (
 				93D8F4642C60016F00868DA3 /* SwiftfulSwitUIInPracticeApp.swift */,
 				93D8F4662C60016F00868DA3 /* ContentView.swift */,
+				93D8F4762C60030300868DA3 /* Shared */,
 				93D8F4682C60017000868DA3 /* Assets.xcassets */,
 				93D8F46A2C60017000868DA3 /* SwiftfulSwitUIInPractice.entitlements */,
 				93D8F46B2C60017000868DA3 /* Preview Content */,
@@ -67,6 +72,14 @@
 				93D8F46C2C60017000868DA3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		93D8F4762C60030300868DA3 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				93D8F4792C60033C00868DA3 /* ImageLoaderView.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +98,9 @@
 			dependencies = (
 			);
 			name = SwiftfulSwitUIInPractice;
+			packageProductDependencies = (
+				93D8F4742C6002D900868DA3 /* SDWebImageSwiftUI */,
+			);
 			productName = SwiftfulSwitUIInPractice;
 			productReference = 93D8F4612C60016F00868DA3 /* SwiftfulSwitUIInPractice.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +129,9 @@
 				Base,
 			);
 			mainGroup = 93D8F4582C60016F00868DA3;
+			packageReferences = (
+				93D8F4732C6002D900868DA3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 93D8F4622C60016F00868DA3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93D8F47A2C60033C00868DA3 /* ImageLoaderView.swift in Sources */,
 				93D8F4672C60016F00868DA3 /* ContentView.swift in Sources */,
 				93D8F4652C60016F00868DA3 /* SwiftfulSwitUIInPracticeApp.swift in Sources */,
 			);
@@ -359,6 +379,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		93D8F4732C6002D900868DA3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		93D8F4742C6002D900868DA3 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93D8F4732C6002D900868DA3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 93D8F4592C60016F00868DA3 /* Project object */;
 }
