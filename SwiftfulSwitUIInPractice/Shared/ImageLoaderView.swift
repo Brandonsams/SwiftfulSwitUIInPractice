@@ -15,7 +15,7 @@ struct ImageLoaderView: View {
     var body: some View {
         Rectangle()
             .opacity(0.001)
-            .overlay(WebImage(url: URL(string: Constants.randomImage))
+            .overlay(WebImage(url: URL(string: urlString))
                 .resizable()
                 .indicator(.activity)
                 .aspectRatio(contentMode: .fill)
@@ -26,7 +26,7 @@ struct ImageLoaderView: View {
 }
 
 #Preview {
-    ImageLoaderView()
+    ImageLoaderView(urlString: Constants.randomImage)
         .cornerRadius(30)
         .padding(40)
         .padding(.vertical, 60)

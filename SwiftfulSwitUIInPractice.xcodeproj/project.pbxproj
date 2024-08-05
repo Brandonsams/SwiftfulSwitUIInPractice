@@ -22,6 +22,9 @@
 		93DDA0682C60425B0014F8AE /* SpotifyHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DDA0672C60425B0014F8AE /* SpotifyHomeView.swift */; };
 		93DDA06A2C60443D0014F8AE /* SpotifyCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DDA0692C60443D0014F8AE /* SpotifyCategoryCell.swift */; };
 		93DDA06D2C6045DB0014F8AE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DDA06C2C6045DB0014F8AE /* Category.swift */; };
+		93DDA06F2C605A5A0014F8AE /* SpotifyRecentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DDA06E2C605A5A0014F8AE /* SpotifyRecentsCell.swift */; };
+		93DDA0712C6060630014F8AE /* SpotifyNewReleaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DDA0702C6060630014F8AE /* SpotifyNewReleaseCell.swift */; };
+		93DDA0732C6071DA0014F8AE /* ImageTitleRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DDA0722C6071DA0014F8AE /* ImageTitleRowCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		93DDA0672C60425B0014F8AE /* SpotifyHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyHomeView.swift; sourceTree = "<group>"; };
 		93DDA0692C60443D0014F8AE /* SpotifyCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyCategoryCell.swift; sourceTree = "<group>"; };
 		93DDA06C2C6045DB0014F8AE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		93DDA06E2C605A5A0014F8AE /* SpotifyRecentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyRecentsCell.swift; sourceTree = "<group>"; };
+		93DDA0702C6060630014F8AE /* SpotifyNewReleaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyNewReleaseCell.swift; sourceTree = "<group>"; };
+		93DDA0722C6071DA0014F8AE /* ImageTitleRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTitleRowCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				93DDA0692C60443D0014F8AE /* SpotifyCategoryCell.swift */,
+				93DDA06E2C605A5A0014F8AE /* SpotifyRecentsCell.swift */,
+				93DDA0702C6060630014F8AE /* SpotifyNewReleaseCell.swift */,
+				93DDA0722C6071DA0014F8AE /* ImageTitleRowCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -222,11 +231,14 @@
 				93D8F47A2C60033C00868DA3 /* ImageLoaderView.swift in Sources */,
 				93DDA06D2C6045DB0014F8AE /* Category.swift in Sources */,
 				93DDA06A2C60443D0014F8AE /* SpotifyCategoryCell.swift in Sources */,
+				93DDA0712C6060630014F8AE /* SpotifyNewReleaseCell.swift in Sources */,
 				93A99D402C6006A700ED69BD /* DatabaseHelper.swift in Sources */,
 				93DDA0682C60425B0014F8AE /* SpotifyHomeView.swift in Sources */,
+				93DDA0732C6071DA0014F8AE /* ImageTitleRowCell.swift in Sources */,
 				93D8F4672C60016F00868DA3 /* ContentView.swift in Sources */,
 				93D8F4652C60016F00868DA3 /* SwiftfulSwitUIInPracticeApp.swift in Sources */,
 				93A99D3E2C60044D00ED69BD /* Constants.swift in Sources */,
+				93DDA06F2C605A5A0014F8AE /* SpotifyRecentsCell.swift in Sources */,
 				93A99D422C60097B00ED69BD /* Product.swift in Sources */,
 				93A99D442C60098C00ED69BD /* User.swift in Sources */,
 			);
@@ -380,7 +392,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandonsams.SwiftfulSwitUIInPractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -418,7 +431,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandonsams.SwiftfulSwitUIInPractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

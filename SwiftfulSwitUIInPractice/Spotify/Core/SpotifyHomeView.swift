@@ -5,22 +5,33 @@
 //  Created by Brandon Sams on 8/4/24.
 //
 
+import SwiftfulUI
 import SwiftUI
 
 struct SpotifyHomeView: View {
     @State private var currentUser: User? = nil
     @State private var selectedCategory: Category? = nil
+    @State private var products: [Product] = []
+    @State private var productRows: [ProductRow] = []
 
     var body: some View {
         ZStack {
             Color.spotifyBlack.ignoresSafeArea()
             ScrollView(.vertical) {
-                LazyVStack(spacing: 1, pinnedViews: [.sectionHeaders]) {
+                LazyVStack(spacing: 1,
+                           pinnedViews: [.sectionHeaders])
+                {
                     Section {
-                        ForEach(0 ..< 20) { _ in
-                            Rectangle()
-                                .fill(.red)
-                                .frame(width: 200, height: 200)
+                        VStack(spacing: 16) {
+                            recentsSection
+                                .padding(.horizontal, 16)
+
+                            if let product = products.first {
+                                newReleaseSection(product: product)
+                                    .padding(.horizontal, 16)
+                            }
+
+                            listRows
                         }
                     }
                     header: {
@@ -41,7 +52,15 @@ struct SpotifyHomeView: View {
     private func getData() async {
         do {
             currentUser = try await DatabaseHelper().getUsers().first
-//            products = try await DatabaseHelper().getProducts()
+            products = try await Array(DatabaseHelper().getProducts())
+
+            var rows: [ProductRow] = []
+            let allBrands = Set(products.compactMap { $0.brand })
+            for brand in allBrands {
+//                let products = self.products.filter { $0.brand == brand }
+                rows.append(ProductRow(title: brand.capitalized, products: products))
+            }
+            productRows = rows
         }
         catch {
         }
@@ -80,6 +99,70 @@ struct SpotifyHomeView: View {
         .padding(.leading, 8)
         .frame(maxWidth: /*@START_MENU_TOKEN@*/ .infinity/*@END_MENU_TOKEN@*/)
         .background(Color.spotifyBlack)
+    }
+
+    private var recentsSection: some View {
+        NonLazyVGrid(
+            columns: 2,
+            alignment: .center,
+            spacing: 10,
+            items: Array(products.prefix(8))
+        ) { product in
+            if let product {
+                SpotifyRecentsCell(
+                    imageName: product.firstImage,
+                    title: product.title
+                )
+                .asButton(.press) {
+                    
+                }
+            }
+        }
+    }
+
+    private func newReleaseSection(product: Product) -> some View {
+        SpotifyNewReleaseCell(
+            imageName: product.firstImage,
+            headline: product.brand,
+            subheadline: product.category,
+            title: product.title,
+            subtitle: product.description,
+            onAddToPlaylistPressed: {
+            },
+            onPlayPressed: {
+            }
+        )
+    }
+
+    private var listRows: some View {
+        ForEach(productRows) { row in
+
+            VStack(spacing: 8) {
+                Text(row.title)
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.spotifyWhite)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 16)
+
+                ScrollView(.horizontal) {
+                    HStack(alignment: .top, spacing: 16) {
+                        ForEach(row.products) { product in
+                            ImageTitleRowCell(
+                                imageSize: 120,
+                                imageName: product.firstImage,
+                                title: product.title
+                            )
+                            .asButton(.press) {
+                                
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                }
+                .scrollIndicators(.hidden)
+            }
+        }
     }
 }
 
