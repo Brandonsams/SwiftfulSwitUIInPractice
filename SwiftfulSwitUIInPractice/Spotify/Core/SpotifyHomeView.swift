@@ -74,7 +74,7 @@ struct SpotifyHomeView: View {
         HStack(spacing: 0) {
             ZStack {
                 if let currentUser {
-                    ImageLoaderView()
+                    ImageLoaderView(urlString: currentUser.image)
                         .background(.spotifyWhite)
                         .clipShape(Circle())
                         .onTapGesture {
