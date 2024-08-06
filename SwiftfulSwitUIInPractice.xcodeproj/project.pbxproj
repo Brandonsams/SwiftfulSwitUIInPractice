@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930532822C61BEF0003E906D /* SongRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930532812C61BEF0003E906D /* SongRowCell.swift */; };
 		93A99D3E2C60044D00ED69BD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A99D3D2C60044D00ED69BD /* Constants.swift */; };
 		93A99D402C6006A700ED69BD /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A99D3F2C6006A700ED69BD /* DatabaseHelper.swift */; };
 		93A99D422C60097B00ED69BD /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A99D412C60097B00ED69BD /* Product.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		930532812C61BEF0003E906D /* SongRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRowCell.swift; sourceTree = "<group>"; };
 		93A99D3D2C60044D00ED69BD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		93A99D3F2C6006A700ED69BD /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		93A99D412C60097B00ED69BD /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				93DDA0722C6071DA0014F8AE /* ImageTitleRowCell.swift */,
 				93DDA0762C60822D0014F8AE /* PlaylistHeaderCell.swift */,
 				93DDA0782C60883E0014F8AE /* PlaylistDescriptionCell.swift */,
+				930532812C61BEF0003E906D /* SongRowCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				93A99D3E2C60044D00ED69BD /* Constants.swift in Sources */,
 				93DDA06F2C605A5A0014F8AE /* SpotifyRecentsCell.swift in Sources */,
 				93A99D422C60097B00ED69BD /* Product.swift in Sources */,
+				930532822C61BEF0003E906D /* SongRowCell.swift in Sources */,
 				93DDA0792C60883E0014F8AE /* PlaylistDescriptionCell.swift in Sources */,
 				93A99D442C60098C00ED69BD /* User.swift in Sources */,
 			);
