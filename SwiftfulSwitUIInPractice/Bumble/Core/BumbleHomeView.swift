@@ -20,6 +20,8 @@ struct BumbleHomeView: View {
                 BumbleFilterView(options: filters, selection: $selectedFilter)
                     .background(Divider(), alignment: .bottom)
                 Spacer()
+
+                BumbleCardView()
             }
             .padding(8)
         }
