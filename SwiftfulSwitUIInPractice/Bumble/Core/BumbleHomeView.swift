@@ -129,10 +129,10 @@ struct BumbleHomeView: View {
                 currentSwipeOffset = dragOffset.width
             },
             onEnded: { dragOffset in
-                if dragOffset.width < -50 {
+                if dragOffset.width < -75 {
                     userDidSelect(index: index, isLike: false)
                 }
-                else if dragOffset.width > 50 {
+                else if dragOffset.width > 75 {
                     userDidSelect(index: index, isLike: true)
                 }
 
