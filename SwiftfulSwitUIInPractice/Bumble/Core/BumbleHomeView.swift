@@ -5,10 +5,12 @@
 //  Created by Brandon Sams on 8/9/24.
 //
 
+import SwiftfulRouting
 import SwiftfulUI
 import SwiftUI
 
 struct BumbleHomeView: View {
+    @Environment(\.router) var router
     @State private var filters: [String] = ["Everyone", "Trending"]
     @AppStorage("bumble_home_filter") private var selectedFilter: String = "Everyone"
     @State private var allUsers: [User] = []
@@ -83,6 +85,7 @@ struct BumbleHomeView: View {
                     .padding(8)
                     .background(.black.opacity(0.001))
                     .onTapGesture {
+                        router.dismissScreen()
                     }
                 Image(systemName: "arrow.uturn.left")
                     .padding(8)
@@ -100,6 +103,9 @@ struct BumbleHomeView: View {
                 .padding(8)
                 .background(.black.opacity(0.001))
                 .onTapGesture {
+                    router.showScreen(.push) { _ in
+                        BumbleChatsView()
+                    }
                 }
                 .frame(maxWidth: .infinity, alignment: .trailing)
         }
@@ -173,5 +179,7 @@ struct BumbleHomeView: View {
 }
 
 #Preview {
-    BumbleHomeView()
+    RouterView { _ in
+        BumbleHomeView()
+    }
 }

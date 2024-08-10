@@ -49,7 +49,6 @@ struct BumbleChatPreviewCell: View {
             }
             .lineLimit(1)
         }
-        .padding()
     }
 }
 
