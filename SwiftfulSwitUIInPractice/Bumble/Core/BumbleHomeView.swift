@@ -24,7 +24,6 @@ struct BumbleHomeView: View {
                 header
                 BumbleFilterView(options: filters, selection: $selectedFilter)
                     .background(Divider(), alignment: .bottom)
-//                BumbleCardView()
 
                 ZStack {
                     if !allUsers.isEmpty {
