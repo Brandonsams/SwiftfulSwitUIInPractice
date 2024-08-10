@@ -132,7 +132,8 @@ struct BumbleCardView: View {
                     .font(.caption)
                     .fontWeight(.semibold)
             }
-            .padding([.horizontal, .trailing], 8)
+            .padding(.horizontal, 8)
+            .padding(.trailing, 8)
             .background(.bumbleYellow)
             .cornerRadius(32)
             .onTapGesture {
